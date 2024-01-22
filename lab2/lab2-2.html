@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Underscore to CamelCase Converter</title>
+</head>
+<body>
+  <textarea id="inputText" rows="5" cols="50" placeholder="Enter underscore variables"></textarea>
+  <button onclick="convert()">Convert</button>
+  <script>
+    function convert() {
+      const inputText = document.getElementById('inputText').value;
+      const variables = inputText.split('\n');
+
+      const convertedVariables = variables.map(variable => {
+        const words = variable.split('_');
+        const camelCase = words[0] + words.slice(1).map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('');
+        return camelCase;
+      });
+
+      // Display results on console
+      convertedVariables.forEach((variable, index) => {
+        const checkmarks = '✅'.repeat(index + 1);
+        console.log(`${variable} ${checkmarks}`);
+      });
+    }
+  </script>
+</body>
+</html>
