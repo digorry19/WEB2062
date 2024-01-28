@@ -7,7 +7,7 @@
 /////////////////////////////////////////////////
 // Data
 const account1 = {
-  owner: "Khang Tran",
+  owner: "Long Pham",
   movements: [4000, -378],
   interestRate: 1.2, // %
   pin: 1909,
